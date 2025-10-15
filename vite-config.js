@@ -2,6 +2,7 @@ import {defineConfig} from "vite";
 import {resolve} from "path";
 
 export default defineConfig({
+    base: '/phonedo-landing/',
     build: {
         rollupOptions: {
             input: {
@@ -10,7 +11,7 @@ export default defineConfig({
                 contact: resolve(__dirname, 'contact.html'),
                 features: resolve(__dirname, 'features.html'),
                 agents: resolve(__dirname, 'agents.html'),
-                working:resolve(__dirname, 'how-work.html'),
+                working: resolve(__dirname, 'how-work.html'),
             },
         },
     },
