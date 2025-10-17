@@ -11,6 +11,45 @@
 <body>
 <script type="module" src="/src/main.js"></script>
 
+<dialog id="dialogDemo">
+    <div class="demo-wrapper">
+        <div class="glow-title">Book your <br/> Demo</div>
+        <div id="closeDialog" class="close"><i class="fi fi-ts-circle-xmark"></i></div>
+        <div class="demo__content">
+            <h2 class="h2 page-title success-text">Book your Demo</h2>
+            <p class="content-p">Harness the power of Phone.Do platform, save costs and improve your organization
+                CX/CSAT</p>
+        </div>
+        <div class="demo__content">
+            <form method="dialog" class="demo__form">
+                <p class="content-p">Complete the below form below and we will be in touch shortly to schedule the
+                    demo.</p>
+                <div class="demo__group">
+                    <input class="demo__input" type="text" placeholder="First name*" aria-label="name"/>
+                    <input class="demo__input" type="text" placeholder="Last name*" aria-label="last name"/>
+                    <input class="demo__input" type="text" placeholder="Email*" aria-label="email"/>
+                    <input class="demo__input" type="text" placeholder="Phone number" aria-label="phone"/>
+                    <input class="demo__input" type="text" placeholder="Company name" aria-label="company"/>
+                    <input class="demo__input" type="text" placeholder="Country/Region" aria-label="Country/Region"/>
+                </div>
+                <button class="btn btn--light">Submit <i class="fi fi-sr-arrow-right"></i></button>
+            </form>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="dialogThanks">
+    <div class="demo-wrapper">
+        <div class="glow-title">Thank You Thank You</div>
+        <div data-close class="close"><i class="fi fi-ts-circle-xmark"></i></div>
+        <div class="demo__content">
+            <h3 class="h3 page-title success-text">Thank You!</h3>
+            <p class="content-p">Your message is important to us, and a member of our team will contact you shortly. We
+                appreciate your interest.
+                Thank You for Contacting Us!</p>
+        </div>
+    </div>
+</dialog>
 
 <header class="header">
     <div class="header__container">
@@ -39,7 +78,11 @@
             <span></span><span></span><span></span>
         </button>
     </div>
+    <div class="container">
+        <div class="with-separator with-separator--green"></div>
+    </div>
 </header>
+
 
 <div class="home-start">
     <section class="container">
@@ -60,7 +103,7 @@
                 <span>Improved CSAT/CX. Lower cost.</span>
             </div>
             <div class="btn-group">
-                <a class="btn btn--outline" href="">Book a Demo</a>
+                <a class="btn btn--outline" href="" data-demo="true">Book a Demo</a>
                 <a class="btn btn--light" href="">Get Started <i class="fi fi-sr-arrow-right"></i></a>
             </div>
         </div>
@@ -91,9 +134,15 @@
 
 
 <div class="container">
-    <div class="arc-border" data-color="#6A93FE"></div>
+
+    <div class="arc-line">
+        <div class="arc-icon">
+            <i class="fi fi-rr-briefcase"></i>
+        </div>
+        <div class="arc-border" data-color="#6A93FE"></div>
+    </div>
+
     <div class="home-section">
-        <div class="blurry-circle-bg"></div>
         <div class="card">
             <div class="card__header">Phone.do allows you to rapidly launch, following a quick setup
                 process, a world class customer engagement platform and provide your customers with a personal service
@@ -183,32 +232,37 @@
 </div>
 
 <footer class="footer">
-    <div class="footer__container">
-        <div class="footer__logo">
-            <img src="images/logo.png" alt="Logo"/>
+    <div class="container">
+        <div class="with-separator with-separator--green"></div>
+    </div>
+    <div class="container">
+        <div class="footer__container">
+            <div class="footer__logo">
+                <img src="images/logo.png" alt="Logo"/>
+            </div>
+
+            <nav class="menu__nav">
+                <ul class="menu__list">
+                    <li><a href="#">Features & Benefits</a></li>
+                    <li><a href="#">How Does it Work</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Agents</a></li>
+                    <li><a href="#">Partner</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer__socials">
+                <a class="social-link" href="#"><i class="fi fi-brands-facebook"></i></a>
+                <a class="social-link" href="#"><i class="fi fi-brands-instagram"></i></a>
+                <a class="social-link" href="#"><i class="fi fi-brands-linkedin"></i></a>
+                <a class="social-link" href="#"><i class="fi fi-brands-twitter"></i></a>
+            </div>
+
+            <button class="menu__burger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-
-        <nav class="menu__nav">
-            <ul class="menu__list">
-                <li><a href="#">Features & Benefits</a></li>
-                <li><a href="#">How Does it Work</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Agents</a></li>
-                <li><a href="#">Partner</a></li>
-                <li><a href="#">About Us</a></li>
-            </ul>
-        </nav>
-
-        <div class="footer__socials">
-            <a class="social-link" href="#"><i class="fi fi-brands-facebook"></i></a>
-            <a class="social-link" href="#"><i class="fi fi-brands-instagram"></i></a>
-            <a class="social-link" href="#"><i class="fi fi-brands-linkedin"></i></a>
-            <a class="social-link" href="#"><i class="fi fi-brands-twitter"></i></a>
-        </div>
-
-        <button class="menu__burger" aria-label="Open menu">
-            <span></span><span></span><span></span>
-        </button>
     </div>
 </footer>
 

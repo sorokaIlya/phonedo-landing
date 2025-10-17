@@ -85,6 +85,29 @@
     flex: 0 1 35%;
   }
 
+  &__stat, &__balance {
+    background: #1A1E37;
+    padding: 25px 35px;
+    border-radius: 8px;
+
+  }
+
+  &__balance{
+    position: relative;
+  }
+
+  &__stat {
+    margin-top: 25px;
+    color: rgba(255, 255, 255, 0.7);
+    .stat {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+    }
+    span:last-child {
+      text-align: end;
+    }
+  }
+
   &__container {
     position: relative;
     display: inline-block;
@@ -121,9 +144,24 @@
   }
 }
 
+.drop-coin {
+  &__inner {
+    position: relative;
+  }
+  .dollar {
+    position: absolute;
+    left: 50%;
+    top:50%;
+    color: #1A1E37;
+    rotate: -45deg;
+    font-size: 28px;
+  }
 
-
-
+  position: absolute;
+  top: calc(100% - 220px);
+  left: 50%;
+  transform: translateX(-50%);
+}
 
 .phone-alert {
   padding: 10px 15px;

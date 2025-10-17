@@ -1,4 +1,3 @@
-
 @mixin for-phone-only {
   @media (max-width: 599px) {
     @content;
@@ -7,6 +6,12 @@
 
 @mixin for-desktop-up {
   @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (max-width: 740px) {
     @content;
   }
 }
@@ -145,11 +150,57 @@
 }
 
 
-@mixin alert-on-phone($color:#00e8d0) {
-  padding: 10px 15px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: $color;
+@mixin glow(
+  $color: #03FCFC,
+  $position: right,
+  $size: 800px
+) {
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: calc($size - (($size / 100) * 20));
+    height: $size;
+
+    background: radial-gradient(
+                    circle,
+                    rgba(red($color), green($color), blue($color), 1) 0%,
+                    rgba(red($color), green($color), blue($color), 0.15) 60%,
+                    rgba(red($color), green($color), blue($color), 0) 100%
+    );
+    filter: blur(190px);
+
+    @if $position == right {
+      top: 50%;
+      right: -$size / 3;
+      transform: translateY(-50%);
+    } @else if $position == left {
+      top: 50%;
+      left: -$size / 3;
+      transform: translateY(-50%);
+    } @else if $position == bottom {
+      bottom: -$size / 3;
+      left: 50%;
+      transform: translateX(-50%);
+    } @else if $position == top {
+      top: -$size / 3;
+      left: 50%;
+      transform: translateX(-50%);
+    } @else if $position == right-top {
+      top: -$size / 3;
+      right: -$size / 3;
+    } @else if $position == right-bottom {
+      bottom: -$size / 3;
+      right: -$size / 3;
+    } @else if $position == left-top {
+      top: -$size / 3;
+      left: -$size / 3;
+    } @else if $position == left-bottom {
+      bottom: -$size / 3;
+      left: -$size / 3;
+    }
+  }
 }

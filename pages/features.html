@@ -12,8 +12,52 @@
 <body>
 <script type="module" src="/src/main.js"></script>
 
-<header class="container">
+<dialog id="dialogDemo">
+    <div class="demo">
+        <div>Complete the below form below and we will be in touch shortly to schedule the demo.</div>
+        <form method="dialog" class="demo__form">
+            <div class="demo__group">
+                <input class="demo__input" type="text" placeholder="First name*" aria-label="name"/>
+                <input class="demo__input" type="text" placeholder="Last name*" aria-label="last name"/>
+                <input class="demo__input" type="text" placeholder="Email*" aria-label="email"/>
+                <input class="demo__input" type="text" placeholder="Phone number" aria-label="phone"/>
+                <input class="demo__input" type="text" placeholder="Company name" aria-label="company"/>
+                <input class="demo__input" type="text" placeholder="Country/Region" aria-label="Country/Region"/>
+            </div>
+            <button class="btn btn--light">Submit <i class="fi fi-sr-arrow-right"></i></button>
+        </form>
+    </div>
+</dialog>
 
+<header class="header">
+    <div class="header__container">
+        <div class="header__logo">
+            <img src="../images/logo.png" alt="Logo"/>
+        </div>
+        <nav class="menu__nav">
+            <ul class="menu__list">
+                <li><a href="#">Features & Benefits</a></li>
+                <li><a href="#">How Does it Work</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Agents</a></li>
+                <li><a href="#">Partner</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+
+        <div class="header__right">
+            <button class="login-button">Login</button>
+            <a class="btn btn--dark" href="#"><i class="fi fi-rr-briefcase"></i> Business</a>
+            <a class="btn btn--dark" href="#"><i class="fi fi-sr-user"></i> Agent</a>
+        </div>
+
+        <button class="menu__burger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <div class="container">
+        <div class="with-separator with-separator--green"></div>
+    </div>
 </header>
 
 <div class="features-top">

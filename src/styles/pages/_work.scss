@@ -12,8 +12,8 @@ $map-colors: (
   padding-top: 120px;
   padding-bottom: 50px;
   margin-bottom: 50px;
-  @include mixins.radial-glow-right-corner-with-text(#6A93FE);
-  .glow-title{
+  @include mixins.glow(#6A93FE);
+  .glow-title {
     right: -80%;
   }
 }
@@ -81,9 +81,9 @@ $map-colors: (
     grid-template-rows: auto;
   }
   @for $i from 1 through 4 {
-    .work-list__item:nth-child(#{$i}){
-      grid-row:auto;
-      grid-column:auto
+    .work-list__item:nth-child(#{$i}) {
+      grid-row: auto;
+      grid-column: auto
     }
   }
 

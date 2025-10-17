@@ -19,9 +19,11 @@ textarea,
 select {
   font: inherit;
 }
-figure{
+
+figure {
   margin: 0;
 }
+
 /* 8. Avoid text overflows */
 p,
 h1,
@@ -53,6 +55,16 @@ h6 {
   text-wrap: balance;
 }
 
+/* Basic styling for the button */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   font-family: "Poppins", serif;
@@ -65,6 +77,9 @@ body {
   font-weight: 700;
   font-size: 56px;
   margin-bottom: 30px;
+  @include mixins.for-phone-only {
+    font-size: 40px;
+  }
 }
 
 .h2 {
@@ -73,10 +88,26 @@ body {
   margin-bottom: 30px;
   letter-spacing: -1px;
   line-height: 1.2;
+  @include mixins.for-phone-only {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+.h3 {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 10px;
+  letter-spacing: 0;
+  line-height: 30px;
 }
 
 .primary-text {
   color: variables.$primaryColor;
+}
+
+.neon-text {
+  color: variables.$darkPurple;
 }
 
 .golden-text {
@@ -109,10 +140,12 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  height: 40vw;
+  min-height: max(35vh, 280px);
   max-height: 560px;
+  margin-bottom: 80px;
+  grid-gap: 30px;
 
   &:after {
     position: absolute;
@@ -122,16 +155,32 @@ body {
     content: '';
     background-image: url('/images/sphere.png');
     background-size: contain;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     transform: rotate(180deg);
     width: 100%;
     height: 100%;
     z-index: -1;
   }
+
+  .h2 {
+    text-align: center;
+    max-width: 580px;
+  }
+
   &.reverse {
     &:after {
       transform: rotate(0deg);
+    }
+  }
+
+  @include mixins.for-phone-only {
+    padding-top: 60px;
+    .btn-group {
+      width: 80%;
+      align-items: stretch;
+      flex-direction: column;
+      gap: 20px;
     }
   }
 }
@@ -147,11 +196,20 @@ body {
   }
 }
 
+.page-top {
+  padding-top: 120px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+}
+
+
 .page-title {
-  margin-bottom: 0;
-  //margin-block-end: -15px;
+  max-width: 580px;
+  margin-bottom: 8px;
   line-height: 1;
+
   & ~ .content-p {
+    margin-bottom: 0px;
     max-width: 860px;
   }
 }
@@ -183,11 +241,17 @@ body {
   display: block;
   max-width: 90%;
   margin: 0 auto;
+
   &--light {
-      @include mixins.neon-separator(#FFFFFF);
+    @include mixins.neon-separator(#FFFFFF);
   }
-  &--light {
-      @include mixins.neon-separator(variables.$primaryColor);
+
+  &--primary {
+    @include mixins.neon-separator(variables.$primaryColor);
+  }
+
+  &--green {
+    @include mixins.neon-separator(variables.$successColor);
   }
 }
 
@@ -202,9 +266,11 @@ body {
   &-green {
     @include mixins.title-separator(#42C6A5, $direction);
   }
+
   &-blue {
     @include mixins.title-separator(#3A9CFC, $direction);
   }
+
   &-red {
     @include mixins.title-separator(#FE6A77, $direction);
   }
