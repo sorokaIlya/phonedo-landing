@@ -6,15 +6,26 @@
   padding-bottom: 50px;
   margin-bottom: 50px;
   @include mixins.radial-glow-right-corner-with-text(#08947C);
-  background: url("/images/homepage-right.png") no-repeat right top;;
+  background: url("/images/homepage-right.png") no-repeat right top;
+  background-size: contain;
+  @include mixins.for-phone-only {
+    background-size: 240px;
+    text-align: center;
+    padding-top: 120px;
+  }
 }
 
 
 .home-banner {
   background: variables.$bodyCard;
   border-radius: 16px;
-  padding: 25px;
   display: flex;
+
+  @include mixins.for-tablet {
+    background: none;
+    flex-direction: column;
+    row-gap: 10px;
+  }
 
   .section-line {
     display: block;
@@ -22,9 +33,15 @@
     background: #ffffff;
     margin-inline: 50px;
     min-width: 1px;
+    margin-block: 25px;
+    @include mixins.for-tablet {
+      display: none;
+    }
   }
 
   .banner-section {
+    border-radius: 16px;
+    padding: 25px;
     flex: 1;
     display: flex;
     justify-content: space-between;
@@ -35,6 +52,23 @@
       font-size: 24px;
       line-height: 1;
     }
+
+    @include mixins.for-tablet {
+      background: variables.$bodyCard;
+      flex-direction: column;
+      h3 {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .btn-group {
+        flex-direction: column;
+        width: calc(100% - 15px);
+        justify-content: stretch;
+        align-items: stretch;
+        row-gap: 15px;
+        margin-top: 25px;
+      }
+    }
   }
 }
 
@@ -42,14 +76,34 @@
   position: relative;
   color: #5F6273;
   font-weight: 700;
-  font-size: 86px;
+
   padding-top: 120px;
   line-height: 1;
   padding-bottom: 120px;
 
+  .glow-title {
+    font-size: 136px;
+    line-height: 1;
+  }
+
+  .words-preview {
+    color: variables.$colorMain;
+    font-size: 86px;
+  }
+
   & > div:not(:first-child) {
     span {
       padding-left: 10%;
+    }
+  }
+
+  @include mixins.for-tablet {
+    .glow-title {
+      right: auto;
+      left: -20px;
+    }
+    .words-preview {
+      font-size: 42px;
     }
   }
 }
@@ -78,20 +132,46 @@
   }
 }
 
+.arc-path {
+  height: 220px;
+  max-width: calc(50% + 15px);
+
+  .arc-border {
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
 .arc-icon {
-  background: linear-gradient(220deg, #42C6A5 0%, #00101F 100%);
+  &.green {
+    background: linear-gradient(220deg, #42C6A5 0%, #00101F 100%);
+  }
+
   display: flex;
   justify-content: center;
   align-self: center;
   width: 55px;
   height: 55px;
   border-radius: 50%;
+
   i {
     color: #FFFFFF;
     font-size: 24px;
     line-height: 2.4;
   }
+
+  &.red {
+    background: linear-gradient(140deg, #FE6A77 20%, rgba(254, 106, 119, 0%) 100%);
+
+    &:before {
+      content: "";
+      display: block;
+    }
+  }
 }
+
 .arc-border {
   --arc-color: #42C6A5; // по умолчанию
   &[data-color] {
@@ -147,5 +227,39 @@
   }
 }
 
+.home-brand {
+  &s {
+    display: flex;
+    margin-top: 25px;
+    padding-bottom: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    grid-gap: 20px;
+
+    & + .with-separator {
+      margin-block: 40px;
+    }
+  }
+
+  &__item {
+    flex: 0 0 30%;
+    min-width: 180px;
+    padding: 10px 20px;
+
+    img {
+      max-width: 190px;
+      object-position: center;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
+    @include mixins.for-phone-only {
+      flex: 1 0 auto;
+      padding: 10px;
+    }
+  }
+
+}
 
 

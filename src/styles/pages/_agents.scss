@@ -10,7 +10,11 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-
+  @include mixins.for-phone-only {
+    flex-direction: column;
+    align-items: center;
+    grid-row-gap: 35px;
+  }
   &__item:not(:last-child)::after {
     content: "";
     display: block;
@@ -23,6 +27,14 @@
     transform: translateY(-50%);
     right: -100%;
     border: 1px solid #FFFFFF;
+    @include mixins.for-phone-only {
+      margin-block: 30px;
+      position: initial;
+      width: 35px;
+      height: 3px;
+      right: auto;
+      top: auto;
+    }
   }
 
   &__icon {
@@ -64,16 +76,69 @@
 }
 
 .agent-present {
-  background: linear-gradient(to top, rgba(250, 250, 251, 15%) 0%, rgba(148, 148, 149, 0%) 100%);
-  border-radius: 0 0 15px 15px;
+  &-wrapper{
+    position: relative;
+    overflow: visible;
+    //position: relative;
+    isolation: isolate; /* создаёт свой контекст и отделяет фон */
+    z-index: 0;
+  }
+  background: linear-gradient(
+                  to top,
+                  rgba(250, 250, 251, 0.15) 0%,
+                  rgba(148, 148, 149, 0) 100%
+  );
+  border-radius: 24px;
+  overflow: hidden;
+  //&__overlay {
+  //  z-index: 2;
+  //  background: linear-gradient(90deg, rgba(250, 250, 251, 15%) 0%, rgba(148, 148, 149, 0%) 100%);
+  //  overflow: hidden;
+  //}
+  //background: linear-gradient(to top, rgba(250, 250, 251, 15%) 0%, rgba(148, 148, 149, 0%) 100%);
+  //border-radius: 0 0 15px 15px;
   padding: 15px;
   margin-bottom: 60px;
+  //position: relative;
+   /* 👈 фон и закругления сохраняются */
+  //&::before {
+  //  content: "";
+  //  position: absolute;
+  //  inset: 0;
+  //  background: linear-gradient(
+  //                  to top,
+  //                  rgba(250, 250, 251, 0.15) 0%,
+  //                  rgba(148, 148, 149, 0) 100%
+  //  );
+  //  z-index: 1; /* фон поверх всего */
+  //}
+  //z-index: 1;
+
+  //&:after{
+  //  content: "";
+  //  background: linear-gradient(to top, rgba(250, 250, 251, 15%) 0%, rgba(148, 148, 149, 0%) 100%);
+  //  z-index: -1;
+  //  inset: 0;
+  //}
+
+  &__phone {
+    //position: absolute;
+    //top: 50%;
+    //left: 0;
+    //transform: translate(-40%, -50%) rotate(-5deg);
+    //width: 300px;
+    //z-index: 2;
+  }
 
   &__content {
+    padding-left: 45%;;
     position: relative;
     display: flex;
     align-items: center;
     grid-gap: 20px;
+    @include mixins.for-phone-only {
+      display: block;
+    }
   }
 
   &__text {
@@ -81,8 +146,13 @@
   }
 
   &__card {
-    position: relative;
-    flex: 0 1 35%;
+    position: absolute;
+    width: 45%;
+    //flex: 0 1 35%;
+    @include mixins.for-phone-only {
+      position: absolute;
+      top:-100%;
+    }
   }
 
   &__stat, &__balance {
@@ -140,7 +210,10 @@
   &__stats {
     position: relative;
     flex: 0 1 35%;
+  }
 
+  &__graph {
+    position: relative;
   }
 }
 

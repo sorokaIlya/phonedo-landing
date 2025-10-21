@@ -19,7 +19,6 @@ document.querySelectorAll('[data-close]').forEach((item) => {
     })
 });
 
-
 // const burger = document.querySelector('.footer__burger');
 // const nav = document.querySelector('.footer__nav');
 //
