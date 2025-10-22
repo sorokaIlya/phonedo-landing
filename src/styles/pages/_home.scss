@@ -134,17 +134,20 @@
 
 .arc-path {
   height: 220px;
-  max-width: calc(50% + 15px);
+  display: flex;
+  position: relative;
 
   .arc-border {
     position: absolute;
-    left: 100px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
+    left: 0;
+    transform: translate(-20%, -50%);
+    width: 100%;;
   }
 }
 
 .arc-icon {
+  z-index: 2;
   &.green {
     background: linear-gradient(220deg, #42C6A5 0%, #00101F 100%);
   }

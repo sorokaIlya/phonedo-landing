@@ -13,24 +13,29 @@
 <script type="module" src="/src/main.js"></script>
 
 <dialog id="dialogDemo">
-    <div class="demo__content">
-        <h2 class="h2 page-title success-text">Book your Demo</h2>
-        <p class="content-p">Harness the power of Phone.Do platform, save costs and improve your organization
-            CX/CSAT</p>
-    </div>
-    <div class="demo__content">
-        <div>Complete the below form below and we will be in touch shortly to schedule the demo.</div>
-        <form method="dialog" class="demo__form">
-            <div class="demo__group">
-                <input class="demo__input" type="text" placeholder="First name*" aria-label="name"/>
-                <input class="demo__input" type="text" placeholder="Last name*" aria-label="last name"/>
-                <input class="demo__input" type="text" placeholder="Email*" aria-label="email"/>
-                <input class="demo__input" type="text" placeholder="Phone number" aria-label="phone"/>
-                <input class="demo__input" type="text" placeholder="Company name" aria-label="company"/>
-                <input class="demo__input" type="text" placeholder="Country/Region" aria-label="Country/Region"/>
-            </div>
-            <button class="btn btn--light">Submit <i class="fi fi-sr-arrow-right"></i></button>
-        </form>
+    <div class="demo-wrapper">
+        <div class="glow-title">Book your <br/> Demo</div>
+        <div id="closeDialog" class="close"><i class="fi fi-ts-circle-xmark"></i></div>
+        <div class="demo__content">
+            <h2 class="h2 page-title success-text">Book your Demo</h2>
+            <p class="content-p">Harness the power of Phone.Do platform, save costs and improve your organization
+                CX/CSAT</p>
+        </div>
+        <div class="demo__content">
+            <form method="dialog" class="demo__form">
+                <p class="content-p">Complete the below form below and we will be in touch shortly to schedule the
+                    demo.</p>
+                <div class="demo__group">
+                    <input class="demo__input" type="text" placeholder="First name*" aria-label="name"/>
+                    <input class="demo__input" type="text" placeholder="Last name*" aria-label="last name"/>
+                    <input class="demo__input" type="text" placeholder="Email*" aria-label="email"/>
+                    <input class="demo__input" type="text" placeholder="Phone number" aria-label="phone"/>
+                    <input class="demo__input" type="text" placeholder="Company name" aria-label="company"/>
+                    <input class="demo__input" type="text" placeholder="Country/Region" aria-label="Country/Region"/>
+                </div>
+                <button class="btn btn--light">Submit <i class="fi fi-sr-arrow-right"></i></button>
+            </form>
+        </div>
     </div>
 </dialog>
 
@@ -89,7 +94,7 @@
                 <div class="plane-item__plane">0$ Monthly</div>
                 <p class="content-p plane-item__description">Ideal for businesses eager to explore our powerful
                     features.</p>
-                <div class="btn btn--primary">Get Started <i class="fi fi-sr-arrow-right"></i></div>
+                <a class="btn btn--primary" href="#">Get Started <i class="fi fi-sr-arrow-right"></i></a>
             </div>
             <div class="plane-extra">
                 <div class="plane-extra__title">
@@ -110,7 +115,7 @@
                 <div class="plane-item__plane">99$ Monthly</div>
                 <p class="content-p plane-item__description">Perfect for solopreneurs or small
                     teams that value every lead.</p>
-                <div class="btn btn--light">Get Started <i class="fi fi-sr-arrow-right"></i></div>
+                <a class="btn btn--light" href="#">Get Started <i class="fi fi-sr-arrow-right"></i></a>
             </div>
             <div class="plane-extra">
                 <div class="plane-extra__title">
@@ -132,7 +137,7 @@
                 <p class="content-p plane-item__description">Ideal for companies looking to
                     expand their operations and
                     enhance customer service.</p>
-                <div class="btn btn--light">Get Started <i class="fi fi-sr-arrow-right"></i></div>
+                <a class="btn btn--light" href="#">Get Started <i class="fi fi-sr-arrow-right"></i></a>
             </div>
             <div class="plane-extra">
                 <div class="plane-extra__title">
@@ -153,7 +158,7 @@
                 <div class="plane-item__plane">1100$ Monthly</div>
                 <p class="content-p plane-item__description">Designed for enterprises
                     with high call traffic.</p>
-                <div class="btn btn--light">Get Started <i class="fi fi-sr-arrow-right"></i></div>
+                <a class="btn btn--light" href="#">Get Started <i class="fi fi-sr-arrow-right"></i></a>
             </div>
             <div class="plane-extra">
                 <div class="plane-extra__title">

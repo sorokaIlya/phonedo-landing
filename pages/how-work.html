@@ -13,19 +13,29 @@
 <script type="module" src="/src/main.js"></script>
 
 <dialog id="dialogDemo">
-    <div class="demo">
-        <div>Complete the below form below and we will be in touch shortly to schedule the demo.</div>
-        <form method="dialog" class="demo__form">
-            <div class="demo__group">
-                <input class="demo__input" type="text" placeholder="First name*" aria-label="name"/>
-                <input class="demo__input" type="text" placeholder="Last name*" aria-label="last name"/>
-                <input class="demo__input" type="text" placeholder="Email*" aria-label="email"/>
-                <input class="demo__input" type="text" placeholder="Phone number" aria-label="phone"/>
-                <input class="demo__input" type="text" placeholder="Company name" aria-label="company"/>
-                <input class="demo__input" type="text" placeholder="Country/Region" aria-label="Country/Region"/>
-            </div>
-            <button class="btn btn--light">Submit <i class="fi fi-sr-arrow-right"></i></button>
-        </form>
+    <div class="demo-wrapper">
+        <div class="glow-title">Book your <br/> Demo</div>
+        <div id="closeDialog" class="close"><i class="fi fi-ts-circle-xmark"></i></div>
+        <div class="demo__content">
+            <h2 class="h2 page-title success-text">Book your Demo</h2>
+            <p class="content-p">Harness the power of Phone.Do platform, save costs and improve your organization
+                CX/CSAT</p>
+        </div>
+        <div class="demo__content">
+            <form method="dialog" class="demo__form">
+                <p class="content-p">Complete the below form below and we will be in touch shortly to schedule the
+                    demo.</p>
+                <div class="demo__group">
+                    <input class="demo__input" type="text" placeholder="First name*" aria-label="name"/>
+                    <input class="demo__input" type="text" placeholder="Last name*" aria-label="last name"/>
+                    <input class="demo__input" type="text" placeholder="Email*" aria-label="email"/>
+                    <input class="demo__input" type="text" placeholder="Phone number" aria-label="phone"/>
+                    <input class="demo__input" type="text" placeholder="Company name" aria-label="company"/>
+                    <input class="demo__input" type="text" placeholder="Country/Region" aria-label="Country/Region"/>
+                </div>
+                <button class="btn btn--light">Submit <i class="fi fi-sr-arrow-right"></i></button>
+            </form>
+        </div>
     </div>
 </dialog>
 
