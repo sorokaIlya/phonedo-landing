@@ -16,6 +16,7 @@
   &__logo {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 
     img {
       height: 40px;
@@ -26,7 +27,7 @@
       margin-left: 12px;
     }
 
-    @include mixins.for-phone-only {
+    @include mixins.for-tablet {
       img:nth-child(2) {
         display: none;;
       }
