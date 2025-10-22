@@ -76,7 +76,7 @@
   position: relative;
   color: #5F6273;
   font-weight: 700;
-
+  overflow: hidden;
   padding-top: 120px;
   line-height: 1;
   padding-bottom: 120px;
@@ -108,9 +108,28 @@
   }
 }
 
+.title-row {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  align-items: center;
+  grid-gap: 10px;
+  &__center{
+    //grid-area: max-content;
+    display: flex;
+    align-self: center;
+    grid-gap: 10px;
+  }
+  &:before {
+    content: "";
+    //grid-area: ;
+    @include mixins.neon-separator(variables.$red);
+  }
+}
 .numbers-card {
   display: flex;
   grid-column-gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
 
   &__item {
     flex: 1;
@@ -120,6 +139,10 @@
     flex-direction: column;
     align-items: center;
     padding: 30px;
+    @include mixins.for-tablet {
+      flex: 1 0 100%;
+      margin-bottom: 10px;
+    }
   }
 
   &__descr {
@@ -138,6 +161,7 @@
   position: relative;
 
   .arc-border {
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -148,6 +172,7 @@
 
 .arc-icon {
   z-index: 2;
+
   &.green {
     background: linear-gradient(220deg, #42C6A5 0%, #00101F 100%);
   }
@@ -181,7 +206,7 @@
     --arc-color: attr(data-color color);
   }
 
-  height: max(6vw, 220px);
+  //height: max(6vw, 220px);
   mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="669" height="202" viewBox="0 0 669 202" fill="none"><path d="M667 0.229L667 40.229C667 128.595 595.365 200.229 507 200.229L0.73 200.229" stroke="url(%23grad)" stroke-width="3"/><defs><linearGradient id="grad" x1="0.73" y1="200.229" x2="497.221" y2="-207.897" gradientUnits="userSpaceOnUse"><stop stop-color="%236A93FE" stop-opacity="0"/><stop offset="0.595" stop-color="%236A93FE"/><stop offset="1" stop-color="%23206050" stop-opacity="0"/></linearGradient></defs></svg>') no-repeat center / contain;
   background: linear-gradient(
                   to right,
@@ -198,6 +223,7 @@
 
 .home-section {
   position: relative;
+  margin-block: 50px 100px;
 
   .with-separator {
     width: 70%;

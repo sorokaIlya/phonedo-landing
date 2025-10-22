@@ -259,6 +259,9 @@ body {
   &--green {
     @include mixins.neon-separator(variables.$successColor);
   }
+  &--red {
+    @include mixins.neon-separator(variables.$red);
+  }
 }
 
 .title-separator {
