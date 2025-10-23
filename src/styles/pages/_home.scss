@@ -113,18 +113,21 @@
   grid-template-columns: 1fr max-content 1fr;
   align-items: center;
   grid-gap: 10px;
-  &__center{
+
+  &__center {
     //grid-area: max-content;
     display: flex;
     align-self: center;
     grid-gap: 10px;
   }
+
   &:before {
     content: "";
     //grid-area: ;
     @include mixins.neon-separator(variables.$red);
   }
 }
+
 .numbers-card {
   display: flex;
   grid-column-gap: 20px;
@@ -201,13 +204,11 @@
 }
 
 .arc-border {
-  --arc-color: #42C6A5; // по умолчанию
+  --arc-color: #42C6A5;
   &[data-color] {
     --arc-color: attr(data-color color);
   }
-
-  //height: max(6vw, 220px);
-  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="669" height="202" viewBox="0 0 669 202" fill="none"><path d="M667 0.229L667 40.229C667 128.595 595.365 200.229 507 200.229L0.73 200.229" stroke="url(%23grad)" stroke-width="3"/><defs><linearGradient id="grad" x1="0.73" y1="200.229" x2="497.221" y2="-207.897" gradientUnits="userSpaceOnUse"><stop stop-color="%236A93FE" stop-opacity="0"/><stop offset="0.595" stop-color="%236A93FE"/><stop offset="1" stop-color="%23206050" stop-opacity="0"/></linearGradient></defs></svg>') no-repeat center / contain;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="669" height="202" viewBox="0 0 669 202" fill="none"><path d="M667 0.229L667 40.229C667 128.595 595.365 200.229 507 200.229L0.73 200.229" stroke="url(%23grad)" stroke-width="3"/><defs><linearGradient id="grad" x1="0.73" y1="200.229" x2="497.221" y2="-207.897" gradientUnits="userSpaceOnUse"><stop stop-color="%236A93FE" stop-opacity="0"/><stop offset="0.595" stop-color="%236A93FE"/><stop offset="1" stop-color="%23206050" stop-opacity="0"/></linearGradient></defs></svg>') no-repeat bottom / contain;
   background: linear-gradient(
                   to right,
                   rgba(255, 255, 255, 0) 0%,
